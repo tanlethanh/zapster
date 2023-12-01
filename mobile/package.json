@@ -1,5 +1,5 @@
 {
-  "name": "Zapster",
+  "name": "@zapster/mobile",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -28,7 +28,7 @@
     "metro-react-native-babel-preset": "0.76.8",
     "prettier": "^2.4.1",
     "react-test-renderer": "18.2.0",
-    "typescript": "4.8.4"
+    "typescript": "*"
   },
   "engines": {
     "node": ">=16"
