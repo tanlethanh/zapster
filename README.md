@@ -6,6 +6,7 @@
 - [ ] Wordbook
 - [ ] Remind
 - [ ] Bot suggest anything in English
+- [ ] Random thought/note
 
 ## References
 
