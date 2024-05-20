@@ -32,7 +32,7 @@ export const handler: APIGatewayProxyHandlerV2 = async (event) => {
 		console.log('handle push event', webhookEvent);
 		sendEmbedToChannel(
 			createGithubActivityMessage({
-				title: `[${webhookEvent.repository.full_name}:${webhookEvent.branch}] push event`,
+				title: `[${webhookEvent.repository.full_name}:${webhookEvent.branch}] new push event`,
 				url: webhookEvent.repository.url,
 				status: 'success',
 				author: {
