@@ -10,7 +10,7 @@ type GithubActivityAction = {
 	status: 'success' | 'failed' | 'warning';
 	title: string;
 	url: string;
-	author: { name: string; iconURL: string };
+	author: { name: string; iconURL: string; url?: string };
 	messages: string[];
 };
 

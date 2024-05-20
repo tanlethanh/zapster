@@ -40,8 +40,9 @@ export const handler: APIGatewayProxyHandlerV2 = async (event) => {
 				url: webhookEvent.repository.url,
 				status: webhookEvent.forced ? 'warning' : 'success',
 				author: {
-					name: webhookEvent.pusher.name,
+					name: webhookEvent.sender.name || webhookEvent.pusher.name,
 					iconURL: webhookEvent.sender.avatar_url,
+					url: webhookEvent.sender.url,
 				},
 				messages: webhookEvent.commits.map((c) => {
 					return `[${c.id.slice(0, 7)}](${c.url}) ${c.message} - ${c.author.username || c.author.name}`;
