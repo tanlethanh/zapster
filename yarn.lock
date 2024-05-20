@@ -3568,6 +3568,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@zapster/discord@workspace:discord":
+  version: 0.0.0-use.local
+  resolution: "@zapster/discord@workspace:discord"
+  dependencies:
+    discord.js: "npm:^14.15.2"
+    dotenv: "npm:^16.4.5"
+  languageName: unknown
+  linkType: soft
+
 "abbrev@npm:^2.0.0":
   version: 2.0.0
   resolution: "abbrev@npm:2.0.0"
@@ -4773,15 +4782,6 @@ __metadata:
   checksum: 10c0/bf93c329163d9a5b679d4e22281998bbd75df12f9df7821bd4e34268e3e26c767f9348979a713affd41642bd1b4cddb0c66bbf299c2801dc4e0cb72326e30e57
   languageName: node
   linkType: hard
-
-"discord@workspace:discord":
-  version: 0.0.0-use.local
-  resolution: "discord@workspace:discord"
-  dependencies:
-    discord.js: "npm:^14.15.2"
-    dotenv: "npm:^16.4.5"
-  languageName: unknown
-  linkType: soft
 
 "dlv@npm:^1.1.3":
   version: 1.1.3

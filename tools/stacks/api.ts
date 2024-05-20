@@ -8,6 +8,9 @@ export const api = ({ stack }: StackContext) => {
 		runtime: 'nodejs20.x',
 		environment: {
 			GITHUB_WEBHOOKS_SECRET: process.env.GITHUB_WEBHOOKS_SECRET as string,
+			DISCORD_BOT_TOKEN: process.env.DISCORD_BOT_TOKEN as string,
+			GITHUB_DISCORD_CHANNEL_ID: process.env
+				.GITHUB_DISCORD_CHANNEL_ID as string,
 		},
 		timeout: '5 minutes',
 	});
