@@ -36,15 +36,15 @@ export const handler: APIGatewayProxyHandlerV2 = async (event) => {
 		const commitsCount = webhookEvent.commits.length;
 		await sendEmbedToChannel(
 			createGithubActivityMessage({
-				title: `[${webhookEvent.repository.name}:${branch}] ${commitsCount} new ${commitsCount > 1 ? 'commits' : 'commit'}`,
+				title: `[${webhookEvent.repository.name}:${branch}] ${webhookEvent.forced ? ' FORCED' : ''} ${commitsCount} new ${commitsCount > 1 ? 'commits' : 'commit'}`,
 				url: webhookEvent.repository.url,
-				status: 'success',
+				status: webhookEvent.forced ? 'warning' : 'success',
 				author: {
 					name: webhookEvent.pusher.name,
 					iconURL: webhookEvent.sender.avatar_url,
 				},
 				messages: webhookEvent.commits.map((c) => {
-					return `[${c.id}](${c.url}) ${c.message} -${c.author}`;
+					return `[${c.id.slice(0, 7)}](${c.url}) ${c.message} - ${c.author.username || c.author.name}`;
 				}),
 			}),
 			channels().GITHUB,
