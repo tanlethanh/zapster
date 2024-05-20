@@ -1,0 +1,9 @@
+{
+  "name": "github",
+  "packageManager": "yarn@4.2.2",
+  "dependencies": {
+    "@octokit/webhooks-types": "^7.5.1",
+    "@types/aws-lambda": "^8.10.138",
+    "aws-lambda": "^1.0.7"
+  }
+}

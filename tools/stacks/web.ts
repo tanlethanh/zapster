@@ -1,11 +1,12 @@
 import { NextjsSite, StackContext } from 'sst/constructs';
+import { baseDomain, hostedZone } from './shared';
 
 export const web = ({ stack }: StackContext) => {
 	const web = new NextjsSite(stack, 'web', {
 		path: 'web',
 		customDomain: {
-			domainName: 'zapster.zenonian.com',
-			hostedZone: 'zenonian.com',
+			domainName: baseDomain,
+			hostedZone,
 		},
 	});
 

@@ -7,10 +7,9 @@
   "private": true,
   "workspaces": [
     "backend",
-    "discord",
     "web",
-    "notion",
-    "telegram"
+    "bot",
+    "github"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

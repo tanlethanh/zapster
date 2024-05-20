@@ -9,7 +9,7 @@ export default [
 	prettier,
 	{
 		languageOptions: {
-			globals: { ...globals.browser },
+			globals: { ...globals.browser, ...globals.node },
 		},
 		rules: {
 			'no-unused-vars': 'warn',
