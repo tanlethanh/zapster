@@ -9,7 +9,8 @@
     "backend",
     "web",
     "bot",
-    "github"
+    "github",
+    "discord"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
