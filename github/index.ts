@@ -29,17 +29,23 @@ export const handler: APIGatewayProxyHandlerV2 = async (event) => {
 
 	const webhookEvent = JSON.parse(event.body) as unknown as WebhookEvent;
 	console.log('handle event', webhookEvent);
-	if ('action' in webhookEvent && webhookEvent.action === 'push') {
-		sendEmbedToChannel(
+
+	if ('pusher' in webhookEvent) {
+		const refs = webhookEvent.ref.split('/');
+		const branch = refs[refs.length - 1];
+		const commitsCount = webhookEvent.commits.length;
+		await sendEmbedToChannel(
 			createGithubActivityMessage({
-				title: `[${webhookEvent.repository.full_name}:${webhookEvent.branch}] new push event`,
+				title: `[${webhookEvent.repository.name}:${branch}] ${commitsCount} new ${commitsCount > 1 ? 'commits' : 'commit'}`,
 				url: webhookEvent.repository.url,
 				status: 'success',
 				author: {
-					name: webhookEvent.sender.name || 'Unknown',
+					name: webhookEvent.pusher.name,
 					iconURL: webhookEvent.sender.avatar_url,
 				},
-				messages: [],
+				messages: webhookEvent.commits.map((c) => {
+					return `[${c.id}](${c.url}) ${c.message} -${c.author}`;
+				}),
 			}),
 			channels().GITHUB,
 		);
