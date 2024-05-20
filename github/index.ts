@@ -37,12 +37,12 @@ export const handler: APIGatewayProxyHandlerV2 = async (event) => {
 		await sendEmbedToChannel(
 			createGithubActivityMessage({
 				title: `[${webhookEvent.repository.name}:${branch}] ${webhookEvent.forced ? ' FORCED' : ''} ${commitsCount} new ${commitsCount > 1 ? 'commits' : 'commit'}`,
-				url: webhookEvent.repository.url,
+				url: webhookEvent.compare,
 				status: webhookEvent.forced ? 'warning' : 'success',
 				author: {
 					name: webhookEvent.sender.name || webhookEvent.pusher.name,
 					iconURL: webhookEvent.sender.avatar_url,
-					url: webhookEvent.sender.url,
+					url: webhookEvent.sender.html_url,
 				},
 				messages: webhookEvent.commits.map((c) => {
 					return `[${c.id.slice(0, 7)}](${c.url}) ${c.message} - ${c.author.username || c.author.name}`;
