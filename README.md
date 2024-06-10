@@ -3,5 +3,10 @@
 
 ## Features
 
-- [ ] Team tool: Notion/Discord/Telegram integration
-- [ ] Personal tool: Wordbook, Remind, Bot suggest anything in English, Random thought/note
+### Team workspace
+
+Notion, Google Calendar, Discord, Notion
+
+### Personal space
+
+Fast note, Remind, Bot suggest anything in English, Random thought
