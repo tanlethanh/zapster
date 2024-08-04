@@ -1,2 +1,2 @@
-export const hostedZone = 'zenonian.com';
-export const baseDomain = 'zapster.zenonian.com';
+export const hostedZone = 'sgsf.store';
+export const baseDomain = 'zapster.sgsf.store';
